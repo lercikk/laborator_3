@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('phone', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id');
+            $table->string('phone');
             $table->timestamps();
         });
     }
